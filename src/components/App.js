@@ -4,14 +4,23 @@ import TodoInput from './TodoInput';
 import TodoList from './TodoList';
 
 
+const initialTodos = new Array(500).fill(0).map(
+    (foo, index) => ({ id: index, text: `Todo ${index}`, done: false })
+);
+
 class App extends Component {
     state = {
         input:'',
-        todos:[
+        todos: initialTodos,
+        /*
+        [
             {id:0, text:'Studying React', done:true},
             {id:1, text:'Studying component style', done:false},
-        ]     
+        ]   
+        */  
     }
+
+    
 
     id = 1
     getId = () => {
